@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="question_tainan">Tainan is in Taiwan.</string>
+    <string name="question_japan">Kyoto is at the north of Tokyo.</string>
+    <string name="question_korea">Busan is in Korea.</string>
+    <string name="question_china">China is in Europe</string>
+</resources>
