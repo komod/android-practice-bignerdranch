@@ -1,12 +1,9 @@
 package com.example.komod.geoquiz;
 
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +14,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private TextView mQuestionTextView;
 
-    private TrueFalse[] mQuestionBank = new TrueFalse[] {
+    private static final TrueFalse[] mQuestionBank = new TrueFalse[] {
             new TrueFalse(R.string.question_tainan, true),
             new TrueFalse(R.string.question_japan, false),
             new TrueFalse(R.string.question_korea, true),

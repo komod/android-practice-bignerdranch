@@ -1,10 +1,6 @@
 package com.example.komod.geoquiz;
 
-/**
- * Created by komod on 2017/3/11.
- */
-
-public class TrueFalse extends Object {
+class TrueFalse {
     private int mQuestion;
     private boolean mTrueQuestion;
 
