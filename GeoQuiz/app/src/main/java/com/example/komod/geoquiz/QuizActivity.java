@@ -1,6 +1,7 @@
 package com.example.komod.geoquiz;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -63,6 +64,11 @@ public class QuizActivity extends AppCompatActivity {
 
         } else {
             mCurrentIndex = 0;
+        }
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setSubtitle(R.string.subtitle);
         }
 
         mQuestionTextView = (TextView)findViewById(R.id.question_text_view);

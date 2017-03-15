@@ -1,6 +1,8 @@
 package com.example.komod.geoquiz;
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -40,6 +42,12 @@ public class CheatActivity extends Activity {
         } else {
             mAnswerIsTrue = getIntent().getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false);
             mCheated = false;
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            ActionBar actionBar = getActionBar();
+            if (actionBar != null) {
+                actionBar.setSubtitle(R.string.subtitle);
+            }
         }
 
         findViewById(R.id.show_answer_button).setOnClickListener(new View.OnClickListener() {
