@@ -23,6 +23,7 @@ public class CheatActivity extends Activity {
         } else {
             answerTextView.setText(R.string.false_button);
         }
+        setResult(RESULT_OK);
     }
 
     @Override
