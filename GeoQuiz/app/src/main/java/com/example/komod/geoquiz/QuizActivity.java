@@ -1,8 +1,11 @@
 package com.example.komod.geoquiz;
 
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +22,10 @@ public class QuizActivity extends AppCompatActivity {
 
     private int mCurrentIndex = 0;
 
+    private void nextQuestion() {
+        mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+        updateQuestionText();
+    }
     private void updateQuestionText() {
         mQuestionTextView.setText(mQuestionBank[mCurrentIndex].getQuestion());
     }
@@ -38,6 +45,12 @@ public class QuizActivity extends AppCompatActivity {
 
         mQuestionTextView = (TextView)findViewById(R.id.question_text_view);
         updateQuestionText();
+        mQuestionTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextQuestion();
+            }
+        });
 
         findViewById(R.id.true_button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,11 +64,17 @@ public class QuizActivity extends AppCompatActivity {
                 checkAnswer(false);
             }
         });
+        findViewById(R.id.previous_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCurrentIndex = (mCurrentIndex - 1 + mQuestionBank.length) % mQuestionBank.length;
+                updateQuestionText();
+            }
+        });
         findViewById(R.id.next_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
-                updateQuestionText();
+                nextQuestion();
             }
         });
     }
