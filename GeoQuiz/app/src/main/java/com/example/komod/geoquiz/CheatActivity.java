@@ -32,8 +32,8 @@ public class CheatActivity extends Activity {
         setContentView(R.layout.activity_cheat);
 
         if (savedInstanceState != null) {
-            mAnswerIsTrue = savedInstanceState.getBoolean(KEY_ANSWER);
-            mCheated = savedInstanceState.getBoolean(KEY_CHEATED);
+            mAnswerIsTrue = savedInstanceState.getBoolean(KEY_ANSWER, false);
+            mCheated = savedInstanceState.getBoolean(KEY_CHEATED, false);
             if (mCheated) {
                 showCheatAnswer();
             }
